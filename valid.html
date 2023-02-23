@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet" href="./valid.css">
+</head>
+<body>
+    <p style="margin-left: 10px; margin-top: 10px;">HTML VALIDATION</p>
+    <div class = "form_class" id="formi">
+        <label>Name:</label>
+        <input id="Mname" type="text" required >
+        <label>Age:</label>
+        <input id="Mage" type="number" maxlength="2" required>
+        <label>Email:</label>
+        <input id="Memail" type="email" required>
+        <label>Contact:</label>
+        <input id="Mcontact" type="number" maxlength="10" required>
+        <br>
+        <button style="margin-top: 5px;" onclick="Mpopup()">
+          Submit
+        </button>
+        <div class="popup" id="popup">
+            <h2>Your Data</h2>
+            <p id = "data"></p>
+            <button  onclick="Mnpopup()">
+                OK
+              </button>
+        </div>
+    </div>
+    <script>
+        let popup = document.getElementById("popup");
+        let formi = document.getElementById("formi");
+        function Mpopup(){
+            popup.classList.add("m_popup");
+            formi.classList.add("mform_class");
+            var name = document.getElementById("Mname").value;
+            var age = document.getElementById("Mage").value;
+            var email = document.getElementById("Memail").value;
+            var contact = document.getElementById("Mcontact").value;
+            document.getElementById("data").innerHTML = "Name :" + name + "\n" + "\nAge:" + age + "\n" + "Email:" + email + "\n" + "Contact:" + contact;
+        } 
+        function Mnpopup(){
+            popup.classList.remove("m_popup");
+            formi.classList.remove("mform_class");
+        }
+    </script>
+</body>
+</html>
